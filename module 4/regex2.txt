@@ -1,0 +1,3 @@
+Find all words in an input string that contains three consecutive vowels, regardless of case:
+
+[\w]*[AEIOUaeiou]{3}[\w]*

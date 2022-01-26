@@ -1,0 +1,3 @@
+Match an input string that is entirely a flight code, of the format AA####, where AA is a two-letter uppercase airline code, and #### is a three- or four-digit flight number:
+
+^[A-Z]{2}\d{3,4}$
