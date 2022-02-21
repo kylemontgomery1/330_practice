@@ -1,0 +1,13 @@
+Select the entire grades table:select * from grades
+
+
+Select all fields describing the courses offered in the College of Arts & Sciences (school code L):
+select * from courses where school_code = 'L'
+
+
+The names, student IDs, and CSE330 grades of all students who are in CSE330S:
+select students.first_name, students.last_name, grades.student_id, grades.grade from grades join students on (grades.student_id = students.id) where grades.dept_id = 81 and grades.course_code = '330S'The names, e-mails, and average grades of any student with an average below 50 so that the dean can send them an email notification that they are now on academic probation:
+select students.first_name, students.last_name, students.email_address, avg(grades.grade) as average_grades from grades join students on (grades.student_id = students.id) group by grades.student_id having avg(grades.grade) < 50
+
+An individual report card for Jack Johnson, consisting of only his student ID, e-mail address, and average grade.
+select students.id, students.email_address, avg(grades.grade) as average_grades from grades join students on (grades.student_id = students.id) where students.first_name = 'Jack' and students.last_name = "Johnson" group by grades.student_id

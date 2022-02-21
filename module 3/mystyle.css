@@ -1,0 +1,35 @@
+body {
+    background-color: tan;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+  
+li {
+    float: left;
+}
+  
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+  
+li a:hover:not(.active) {
+    background-color: grey;
+}
+
+.post {
+    border-style: solid;
+    width: 100%;
+    background-color: aliceblue;
+    font-size: small;
+    color:black;
+    height:auto;
+}
