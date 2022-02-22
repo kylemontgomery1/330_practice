@@ -12,6 +12,16 @@
         if ($username == 'guest') { ?>
         <p>You need to an account to post. Please <a href="login.php">Login</a> or <a href="create.php">create an account</a></p>
     <?php } else{?>
+    <ul>
+    <li><a href="news_main.php">Home</a></li>
+    <li><a href="post.php">Post</a></li>
+    <?php if ($username == 'guest') { ?>
+        <li style="float:right"><a href="login.php">Login</a></li>
+        <li style="float:right"><a href="create.php">Create an Account</a></li>
+    <?php } else { ?>
+        <li style="float:right"><a href="logout.php">Logout</a></li>
+    <?php } ?>
+    </ul>
 
     <h2>Post</h2>
 

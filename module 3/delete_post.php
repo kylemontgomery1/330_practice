@@ -2,8 +2,7 @@
     session_start();
     $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'guest';
     require 'database.php';
-    $comment_id = $_GET['id'];
-    $post_id = $_GET['post_id'];
+    $post_id = $_GET['id'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,16 +23,16 @@
     <?php } ?>
 </ul>
 <?php
-$stmt = $mysqli->prepare("Delete from comments where id = (?)");
+$stmt = $mysqli->prepare("Delete from posts where id = (?)");
 if(!$stmt){
     printf("Query Prep Failed: %s\n", $mysqli->error);
     exit;
     }
 
-    $stmt->bind_param('i', $comment_id);
+    $stmt->bind_param('i', $post_id);
     $stmt->execute();
     $stmt->close();
-    header("Location: comments.php?id=$post_id");
+    header("Location: news_main.php");
             
     ?>
 

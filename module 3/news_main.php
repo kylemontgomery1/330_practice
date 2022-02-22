@@ -36,11 +36,10 @@
         <a href='comments.php?id=<?php echo $id; ?>'>View Comments </a>
         <a href='new_comment.php?id=<?php echo $id; ?>'>New Comment </a>
         <?php
-            if ($username == $poster) {
-                echo "<a href='news_main.php'>Edit Post </a>";
-                echo "<a href='news_main.php'>Delete Post</a>";
-            }
-        ?>
+            if ($username == $poster) { ?>
+                <a href='delete_post.php?id=<?php echo $id; ?>'>Delete Post</a>
+            <?php } ?>
+
         </div>
     <?php } ?>
 

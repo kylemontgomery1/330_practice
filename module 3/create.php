@@ -5,6 +5,10 @@
     <link rel="stylesheet" type="text/css" href="mystyle.css">
 </head>
 <body>
+<ul>
+    <li><a href="news_main.php">Home</a></li>
+    <li><a href="post.php">Post</a></li>
+</ul>
     <h2>Create an Account</h2>
 
     <form method="post">

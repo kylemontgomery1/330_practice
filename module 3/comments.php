@@ -32,12 +32,13 @@
         <div>
         <p><?php echo $commenter.': '. $content; ?></a><br>
         <?php
-            if ($username == $commenter) {
-                echo "<a href='delete_comment.php'>Delete Comment</a>";
-            }
+            if ($username == $commenter) { ?>
+                <a href='delete_comment.php?id=<?php echo $id; ?>&post_id=<?php echo $_GET['id']; ?>'>Delete Comment</a>
+            <?php }
         ?>
-        <br><br></div>
+        </div>
     <?php } ?>
+    <a href='new_comment.php?id=<?php echo $_GET['id']; ?>'>New Comment </a>
 
 
 </body>
