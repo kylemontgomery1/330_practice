@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>The DeGiverville Post</title>
+    <title>News</title>
     <link rel="stylesheet" type="text/css" href="mystyle.css">
 </head>
 <body>
     <h2>Login</h2>
 
-    <form method="post", name = 'login'>
+    <form method="post", action=login.php>
 
     <label for="username">Username:</label><br>
     <input type="text" id="username" name="username"><br><br>
@@ -22,21 +22,15 @@
         session_start();
         if(isset($_POST['submit'])){
             
-
             $username = $_POST['username'];
             $password = $_POST['pw'];
 
             $stmt = $mysqli->prepare("select * from users where username = '$username' and password = '$password'");
-            if(!$stmt){
-                printf("Query Prep Failed: %s\n", $mysqli->error);
-                exit;
-            }
             $stmt->execute();
             $result = $stmt->get_result();
             $rows = mysqli_num_rows($result);
             if ($rows == 1) {
                 $_SESSION['username'] = $username;
-                // Redirect to user dashboard page
                 header("Location: news_main.php");
             } else {
                 echo "<div>

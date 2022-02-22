@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>The DeGiverville Post</title>
+    <title>News</title>
     <link rel="stylesheet" type="text/css" href="mystyle.css">
 </head>
 <body>

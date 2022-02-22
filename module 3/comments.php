@@ -22,31 +22,23 @@
     <?php } ?>
 </ul>
 <?php
-    $stmt = "SELECT * FROM posts";
+    $stmt = "SELECT * FROM comments Where post_id =".$_GET['id'];
     $result = mysqli_query($mysqli, $stmt);
-    $posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    foreach ($posts as $post) {
-        $id = $post['id'];
-        $poster = $post['username'];
-        $link = $post['link'];
-        $message = $post['message']; ?>
-        <div class="post">
-        <a href="<?php echo $link; ?>"><?php echo $message; ?></a><br>
-
-        <a href='comments.php?id=<?php echo $id; ?>'>View Comments </a>
-        <a href='new_comment.php?id=<?php echo $id; ?>'>New Comment </a>
+    $comments = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    foreach ($comments as $comment) {
+        $id = $comment['id'];
+        $commenter = $comment['username'];
+        $content = $comment['content']; ?>
+        <div>
+        <p><?php echo $commenter.': '. $content; ?></a><br>
         <?php
-            if ($username == $poster) {
-                echo "<a href='news_main.php'>Edit Post </a>";
-                echo "<a href='news_main.php'>Delete Post</a>";
+            if ($username == $commenter) {
+                echo "<a href='delete_comment.php'>Delete Comment</a>";
             }
         ?>
-        </div>
+        <br><br></div>
     <?php } ?>
 
 
 </body>
 </html>
-
-
-
